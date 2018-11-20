@@ -5,18 +5,6 @@
    "target_path": "device/qcom/common",
    "branch":      "lineage-15.1"
  },
- {
-    "repository":  "android_device_yureka2",
-    "target_path": "device/yu/YUREKA2"
-  },
-  {
-    "repository":  "android_kernel_yureka2",
-    "target_path": "kernel/yu/msm8953"
-  },
-  { 
-    "repository":  "android_vendor_yu_yureka2",
-    "target_path": "vendor/yu"
-  },
   { 
     "remote":      "github",  
     "repository":  "LineageOS/android_packages_resources_devicesettings",
