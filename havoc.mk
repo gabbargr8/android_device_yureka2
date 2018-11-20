@@ -17,9 +17,9 @@
 $(call inherit-product, device/yu/YUREKA2/full_YUREKA2.mk)
 
 # Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/havoc/config/common.mk)
 
-PRODUCT_NAME := lineage_YUREKA2
+PRODUCT_NAME := havoc_YUREKA2
 BOARD_VENDOR := YU
 
 PRODUCT_GMS_CLIENTID_BASE := android-micromax
