@@ -5,6 +5,24 @@
    "target_path": "device/qcom/common",
    "branch":      "lineage-15.1"
  },
+ {
+    "remote":      "github",  
+    "repository":  "jmjxperia/android_device_yureka2",
+    "target_path": "device/yu/YUREKA2",
+   	"branch":      "hav"
+  },
+  {
+    "remote":      "github",  
+    "repository":  "jmjxperia/android_kernel_yureka2",
+    "target_path": "kernel/yu/msm8953",
+    "branch":      "Nosg"
+  },
+  { 
+    "remote":      "github",  
+    "repository":  "jmjxperia/android_vendor_yu_yureka2",
+    "target_path": "vendor/yu",
+	   "branch":      "O"
+  },
   { 
     "remote":      "github",  
     "repository":  "LineageOS/android_packages_resources_devicesettings",
