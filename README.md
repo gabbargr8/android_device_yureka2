@@ -1,4 +1,4 @@
-# Device Tree for YU Yureka 2(YUREKA2)
+# Device Tree for YU Yureka 2/wt89536(YUREKA2)
 
 ## Spec Sheet
 

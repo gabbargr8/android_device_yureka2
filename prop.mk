@@ -1,5 +1,5 @@
 #
-# system.prop for markw
+# system.prop for YUREKA2
 #
 
 # Audio
@@ -173,6 +173,9 @@ ro.telephony.default_network=22,20 \
 service.qti.ims.enabled=1 \
 telephony.lteOnCdmaDevice=1
 
+# Fast charing
+persist.usb.hvdcp.detect=true
+
 # Time Services
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.timed.enable=true \
@@ -193,6 +196,9 @@ ro.vendor.qti.sys.fw.trim_enable_memory=2147483648
 # Usb
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.sys.usb.config.extra=none
+
+# Security patch level
+ro.vendor.build.security_patch=2018-07-01
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
