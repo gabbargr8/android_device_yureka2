@@ -18,8 +18,8 @@
 
 set -e
 
-DEVICE=markw
-VENDOR=xiaomi
+DEVICE=YUREKA
+VENDOR=yu
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
