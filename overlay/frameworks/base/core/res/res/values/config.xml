@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-/*
-** Copyright 2009, The Android Open Source Project
-**
-** Licensed under the Apache License, Version 2.0 (the "License");
-** you may not use this file except in compliance with the License.
-** You may obtain a copy of the License at
-**
-**     http://www.apache.org/licenses/LICENSE-2.0
-**
-** Unless required by applicable law or agreed to in writing, software
-** distributed under the License is distributed on an "AS IS" BASIS,
-** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-** See the License for the specific language governing permissions and
-** limitations under the License.
-*/
--->
+    Copyright (C) 2017 The LineageOS Project
 
-<!-- These resources are around just to allow their values to be customized
-     for different hardware and product builds.  Do not translate.
-     NOTE: The naming convention is "config_camelCaseValue". Some legacy
-     entries do not follow the convention, but all new entries should. -->
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
@@ -45,21 +38,13 @@
          backlight values for LUX levels between these control points.
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
-        <item>5</item>
-        <item>9</item>
         <item>10</item>
-        <item>14</item>
-        <item>25</item>
-        <item>50</item>
+        <item>30</item>
+        <item>60</item>
         <item>100</item>
-        <item>200</item>
-        <item>300</item>
-        <item>500</item>
-        <item>750</item>
-        <item>1000</item>
-        <item>2000</item>
-        <item>4000</item>
-        <item>7000</item>
+        <item>150</item>
+        <item>210</item>
+        <item>255</item>
     </integer-array>
 
     <!-- Array of output values for LCD backlight corresponding to the LUX values
@@ -68,41 +53,19 @@
          The brightness values must be between 0 and 255 and be non-decreasing.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>5</item>
-        <item>5</item>
         <item>10</item>
-        <item>12</item>
-        <item>17</item>
-        <item>29</item>
-        <item>35</item>
-        <item>47</item>
-        <item>75</item>
-        <item>114</item>
-        <item>130</item>
-        <item>152</item>
-        <item>175</item>
+        <item>20</item>
+        <item>40</item>
+        <item>70</item>
+        <item>110</item>
+        <item>160</item>
         <item>200</item>
-        <item>230</item>
         <item>255</item>
     </integer-array>
 
     <!-- Minimum screen brightness setting allowed by the power manager.
          The user is forbidden from setting the brightness below this level. -->
     <integer name="config_screenBrightnessSettingMinimum">1</integer>
-    
-        <!-- Stability requirements in milliseconds for accepting a new brightness level.  This is used
-         for debouncing the light sensor.  Different constants are used to debounce the light sensor
-         when adapting to brighter or darker environments.  This parameter controls how quickly
-         brightness changes occur in response to an observed change in light level that exceeds the
-         hysteresis threshold. -->
-    <integer name="config_autoBrightnessBrighteningLightDebounce">2000</integer>
-    <integer name="config_autoBrightnessDarkeningLightDebounce">4000</integer>
-    
-    <!-- Default LED on time for notification LED in milliseconds. -->
-    <integer name="config_defaultNotificationLedOn">4000</integer>
-
-    <!-- Default LED off time for notification LED in milliseconds. -->
-    <integer name="config_defaultNotificationLedOff">4000</integer>
 
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveNotificationLed">true</bool>
@@ -184,16 +147,10 @@
         <item>bt-pan</item>
     </string-array>
 
-    <!-- Array of ConnectivityManager.TYPE_xxxx values allowable for tethering -->
-    <!-- Common options are [1, 4] for TYPE_WIFI and TYPE_MOBILE_DUN or
-    <!== [0,1,5,7] for TYPE_MOBILE, TYPE_WIFI, TYPE_MOBILE_HIPRI and TYPE_BLUETOOTH -->
-    <integer-array translatable="false" name="config_tether_upstream_types">
-        <item>1</item>
-        <item>0</item>
-        <item>4</item>
-        <item>5</item>
-        <item>7</item>
-    </integer-array>
+    <!-- When true, the tethering upstream network follows the current default
+         Internet network (except when the current default network is mobile,
+         in which case a DUN network will be used if required). -->
+    <bool translatable="false" name="config_tether_upstream_automatic">true</bool>
 
     <!-- Boolean indicating if restoring network selection should be skipped -->
     <!-- The restoring is handled by modem if it is true-->
@@ -274,7 +231,7 @@
          to maximize power savings but not all devices support it.
          Refer to power.h for details.
     -->
-    <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
+    <bool name="config_powerDecoupleInteractiveModeFromDisplay">false</bool>
 
     <!-- Screen brightness used to dim the screen while dozing in a very low power state.
          May be less than the minimum allowed brightness setting
@@ -308,10 +265,6 @@
     <!-- Operating volatage for bluetooth controller. 0 by default-->
     <integer translatable="false" name="config_bluetooth_operating_voltage_mv">3300</integer>
 
-    <!-- Enable overlay for all location components. -->
-    <string name="config_networkLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
-    <string name="config_fusedLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
-
     <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
     <bool translatable="false" name="config_wifi_dual_band_support">true</bool>
 
@@ -327,19 +280,12 @@
     <!-- Flag specifying whether or not IMS will use the ImsResolver dynamically -->
     <bool name="config_dynamic_bind_ims">true</bool>
 
-     <!-- Boolean indicating if current platform supports HFP inband ringing -->
+    <!-- Boolean indicating if current platform supports HFP inband ringing -->
      <bool name="config_bluetooth_hfp_inband_ringing_support">true</bool>
 
     <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
-    in hardware. -->
-    <bool name="config_setColorTransformAccelerated">true</bool>
-
-    <!-- Number of physical SIM slots on the device. This includes both eSIM and pSIM slots, and
-         is not necessarily the same as the number of phones/logical modems supported by the device.
-         For example, a multi-sim device can have 2 phones/logical modems, but 3 physical slots,
-         or a single SIM device can have 1 phones/logical modems, but 2 physical slots (one eSIM
-         and one pSIM) -->
-    <integer name="config_num_physical_slots">2</integer>
+         in hardware. -->
+     <bool name="config_setColorTransformAccelerated">true</bool>
 
     <!-- Default list of files pinned by the Pinner Service -->
     <string-array translatable="false" name="config_defaultPinnerServiceFiles">
@@ -356,7 +302,6 @@
     <!-- Should the pinner service pin the Camera application? -->
     <bool name="config_pinnerCameraApp">true</bool>
 
-    <!-- enabling WifiDisplay(Miracast Source)-->
-    <bool name="config_enableWifiDisplay">true</bool>
-
+    <!-- Should the pinner service pin the Home application? -->
+    <bool name="config_pinnerHomeApp">true</bool>
 </resources>

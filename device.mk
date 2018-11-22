@@ -21,7 +21,9 @@ $(call inherit-product, vendor/yu/YUREKA2/YUREKA2-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay
+    $(LOCAL_PATH)/overlay \
+    $(LOCAL_PATH)/overlay-lineage
+	
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
