@@ -18,7 +18,7 @@
 
 set -e
 
-DEVICE=YUREKA
+DEVICE=YUREKA2
 VENDOR=yu
 
 # Load extract_utils and do some sanity checks
