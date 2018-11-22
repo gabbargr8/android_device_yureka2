@@ -63,6 +63,15 @@ on post-fs-data
     chmod 0644 /sys/class/timed_output/vibrator/vtg_level
     chmod 0644 /sys/class/timed_output/vibrator/vtg_max
     chmod 0644 /sys/class/timed_output/vibrator/vtg_min
+	
+	chown media media /sys/bus/platform/drivers/msm8952-asoc-wcd/SmartPa_Ctl
+    chmod 0660 /sys/bus/platform/drivers/msm8952-asoc-wcd/SmartPa_Ctl
+    chown media media /dev/i2c-8
+    chmod 0660 /dev/i2c-8
+    chown nfc nfc /sys/devices/platform/nfc-power/nfc_power
+    chmod 0660 /sys/devices/platform/nfc-power/nfc_power
+    chown nfc nfc /dev/pn547
+    chmod 0660 /dev/pn547
 
 #Create folder for mm-qcamera-daemon
 mkdir /data/vendor/camera 0770 camera camera
